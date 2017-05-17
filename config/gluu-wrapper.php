@@ -25,14 +25,14 @@ return [
     'table_name' => env('GLUU_TOKEN_TABLENAME', 'access_tokens'),
 
     // Endpoint for user to access
-    'route_endpoint' => '/api/v1/login',
+    'route_endpoint' => env('GLUU_LOGIN_ENDPOINT', '/api/v1/login'),
 
     // Callback routes
-    'route_access_token_granted' => '/callback',
+    'route_access_token_granted' => env('GLUU_TOKEN_GRANTED_ENDPOINT', '/callback'),
 
     // users table name
-    'user_table_name' => 'users',
+    'user_table_name' => env('GLUU_USER_TABLE', 'users'),
 
     // Route for getting user info
-    'route_get_user_info' => '/user_info/{access_token}',
+    'route_get_user_info' => env('GLUU_USER_INFO_ENDPOINT', '/user_info/{access_token}'),
 ];
